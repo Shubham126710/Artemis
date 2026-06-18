@@ -45,7 +45,9 @@ export default function ForYouTab({ movies, onBookMovie, setActiveTab }: ForYouT
   // We sort movies by how many of their genres overlap with savedGenres.
   const recommendedMovies = movies
     .map(movie => {
-      const matchCount = (movie.genres || movie.tags || []).filter(g => savedGenres.includes(g)).length;
+      const movieData = movie as any;
+      const movieTags = movieData.genres ? movieData.genres.map((g: any) => g.name) : (movie.tags || []);
+      const matchCount = movieTags.filter((g: string) => savedGenres.includes(g)).length;
       return { ...movie, matchScore: matchCount };
     })
     .filter(m => m.matchScore > 0)
