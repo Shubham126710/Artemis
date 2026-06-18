@@ -14,7 +14,10 @@ export default function HomeTab({ movies, onBookMovie }: HomeTabProps) {
   const itemsPerPage = 20;
 
   const genres = useMemo(() => {
-    const allGenres = movies.flatMap(m => m.genres || []);
+    const allGenres = movies.flatMap(m => {
+      const mData = m as any;
+      return mData.genres ? mData.genres.map((g: any) => g.name) : (m.tags || []);
+    });
     const unique = Array.from(new Set(allGenres));
     return ["All", ...unique.sort()];
   }, [movies]);
@@ -37,7 +40,9 @@ export default function HomeTab({ movies, onBookMovie }: HomeTabProps) {
   };
 
   const filteredMovies = movies.filter(m => {
-    const matchGenre = selectedGenre === "All" || m.genres?.includes(selectedGenre);
+    const mData = m as any;
+    const movieTags = mData.genres ? mData.genres.map((g: any) => g.name) : (m.tags || []);
+    const matchGenre = selectedGenre === "All" || movieTags.includes(selectedGenre);
     const matchYear = selectedYear === "All" || m.releaseYear?.toString() === selectedYear;
     return matchGenre && matchYear;
   });
