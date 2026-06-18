@@ -18,7 +18,7 @@ export default function SettingsTab() {
     if (!user?.email) return;
     setSecLoading(true);
     try {
-      await authClient.forgetPassword({
+      await (authClient as any).forgetPassword({
         email: user.email,
         redirectTo: "/reset-password",
       });
