@@ -2,8 +2,8 @@ import { ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="px-6 pb-8 pt-20 bg-bg-base relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto bg-[#0a0a0a] rounded-[32px] border border-white/5 p-10 md:p-16 flex flex-col relative z-10 overflow-hidden">
+    <footer className="px-6 pt-20 bg-bg-base relative overflow-hidden">
+      <div className="max-w-[1400px] mx-auto bg-[#0a0a0a] rounded-t-[32px] border border-b-0 border-white/5 p-10 md:p-16 flex flex-col relative z-10 overflow-hidden">
         
         {/* Powerful Glow from the bottom edge of the card */}
         <div className="absolute -bottom-[50%] left-1/2 -translate-x-1/2 w-[60%] h-full bg-glow-purple/50 blur-[100px] pointer-events-none rounded-[100%]"></div>

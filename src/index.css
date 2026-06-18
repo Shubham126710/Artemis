@@ -21,7 +21,6 @@
   
   html, body {
     @apply bg-bg-base text-gray-100 font-sans antialiased;
-    overflow-x: hidden;
   }
 }
 

@@ -8,7 +8,8 @@ const studios = [
   { name: "Lionsgate", logo: "/Lionsgate_logo.png" },
   { name: "Pixar", logo: "/Pixar_logo.png", alwaysWhite: true },
   { name: "DreamWorks", logo: "/dreamworks_logo.jpeg", alwaysWhite: true },
-  { name: "Sony Pictures", logo: "/Sony_Pictures_logo.png", alwaysWhite: true }
+  { name: "Sony Pictures", logo: "/Sony_Pictures_logo.png", alwaysWhite: true },
+  { name: "Disney", logo: "/Disney_logo.svg", alwaysWhite: true }
 ];
 
 // Duplicate array for seamless infinite scroll

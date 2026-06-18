@@ -8,9 +8,9 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50"
+      className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] max-w-6xl z-50"
     >
-      <div className="glass px-6 py-4 flex items-center justify-between rounded-full">
+      <div className="glass px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between rounded-full">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer group">
           <img src="/logo.png" alt="SilverSeat" className="h-8 w-auto object-contain" />

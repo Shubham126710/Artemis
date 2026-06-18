@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -11,7 +12,7 @@ const HeroSection = () => {
           style={{ backgroundImage: `url('/hero.jpg')` }}
         ></div>
         {/* Subtle fade at the bottom to transition into the next black section smoothly */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-base to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-base to-transparent z-10"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -22,6 +23,7 @@ const HeroSection = () => {
           className="flex justify-center mb-8"
         >
           <div className="glass px-4 py-2 rounded-full flex items-center gap-2">
+            <Star className="w-4 h-4 fill-white text-white" />
             <span className="text-sm font-medium text-gray-300">Trusted by movie lovers nationwide</span>
           </div>
         </motion.div>
@@ -60,9 +62,9 @@ const HeroSection = () => {
           <Link href="/login" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center">
             Book Tickets
           </Link>
-          <button className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold hover:bg-white/10 hover:scale-105 transition-all">
+          <a href="#movies" className="w-full sm:w-auto px-8 py-4 rounded-full glass font-semibold hover:bg-white/10 hover:scale-105 transition-all text-center">
             Explore Movies
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

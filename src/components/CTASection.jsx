@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const CTASection = () => {
   return (
@@ -24,9 +25,9 @@ const CTASection = () => {
             Join thousands of movie lovers who have upgraded their cinematic experience. Book your perfect seat in seconds.
           </p>
           
-          <button className="px-10 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+          <Link href="/login" className="inline-block px-10 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]">
             Book Your Seat
-          </button>
+          </Link>
         </div>
       </motion.div>
     </section>

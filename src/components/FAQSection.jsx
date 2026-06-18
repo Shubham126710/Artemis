@@ -76,8 +76,8 @@ const FAQSection = () => {
             </svg>
             Message us if you have more
           </button>
-          <a href="mailto:hello@silverseat.com" className="text-xs text-gray-500 hover:text-white transition-colors">
-            hello@silverseat.com
+          <a href="mailto:shubham360upadhyay@gmail.com" className="text-xs text-gray-500 hover:text-white transition-colors">
+            shubham360upadhyay@gmail.com
           </a>
         </div>
       </div>

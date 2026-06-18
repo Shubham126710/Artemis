@@ -57,10 +57,14 @@ const Loader = ({ setLoading }) => {
     <motion.div 
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-[#050505]"
     >
-      {/* Aurora Animated Background */}
-      <div className="aurora-container"></div>
+      {/* Cinematic Background Layers */}
+      <div className="spotlight"></div>
+      <div className="beams"></div>
+      <div className="bars"></div>
+      <div className="noise"></div>
+      <div className="vignette"></div>
 
       <div className="relative flex flex-col items-center justify-center z-10 gap-12">
         <div className="square-loader">
@@ -80,8 +84,16 @@ const Loader = ({ setLoading }) => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col items-center text-center px-6 max-w-2xl"
         >
-          <span className="font-medium text-sm tracking-[0.2em] uppercase text-white/70 mb-4">Loading Experience...</span>
-          <span className="text-white/90 italic font-light text-lg md:text-xl">
+          <span 
+            className="font-bold text-xs tracking-[0.3em] uppercase text-white/50 mb-6"
+            style={{ fontFamily: "'Instrument Sans', sans-serif" }}
+          >
+            Loading Experience...
+          </span>
+          <span 
+            className="text-white/90 italic font-light text-xl md:text-2xl"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             {quote}
           </span>
         </motion.div>
