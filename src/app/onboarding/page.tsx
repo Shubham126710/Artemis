@@ -25,11 +25,12 @@ export default function OnboardingPage() {
       });
   }, []);
 
-  const genresList = useMemo(() => {
-    const allGenres = movies.flatMap(m => m.tags || []);
-    const unique = Array.from(new Set(allGenres));
-    return unique.sort().slice(0, 20); // Top 20 genres
-  }, [movies]);
+  const genresList = [
+    "Action", "Adventure", "Animation", "Biography", "Comedy",
+    "Crime", "Documentary", "Drama", "Family", "Fantasy",
+    "History", "Horror", "Music", "Mystery", "Romance",
+    "Sci-Fi", "Sports", "Thriller", "War", "Western"
+  ];
 
   // Filter movies for swiping based on selected genres
   const swipeMovies = useMemo(() => {
