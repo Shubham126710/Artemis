@@ -78,18 +78,18 @@ export default function OnboardingPage() {
     // First try to strictly match genre AND 2000s/2010s era
     let matched = movies.filter(m => {
       const isRightEra = m.releaseYear && m.releaseYear >= 2000 && m.releaseYear < 2020;
-      const matchesGenre = (m.tags || []).some(g => selectedGenres.includes(g));
+      const matchesGenre = (m.tags || []).some((g: string) => selectedGenres.includes(g));
       return isRightEra && matchesGenre;
     });
     
     // If we have none in that era, fallback to matching genre in ANY era from DB
     if (matched.length === 0) {
-      matched = movies.filter(m => (m.tags || []).some(g => selectedGenres.includes(g)));
+      matched = movies.filter(m => (m.tags || []).some((g: string) => selectedGenres.includes(g)));
     }
 
     // If the DB STILL has nothing for this genre, or DB failed, use our robust curated fallback list
     if (matched.length === 0) {
-      matched = FALLBACK_MOVIES.filter(m => (m.tags || []).some(g => selectedGenres.includes(g)));
+      matched = FALLBACK_MOVIES.filter(m => (m.tags || []).some((g: string) => selectedGenres.includes(g)));
       
       // Ultimate safety net: if the user picked a genre we have ZERO movies for anywhere (like Documentary or Sports)
       // just give them the whole fallback list so the app doesn't break to an empty state
