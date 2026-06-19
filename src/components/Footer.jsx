@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Left Column (Brand + CTA) */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/artemis-logo.png" alt="Artemis" className="h-12 w-auto object-contain" />
+              <img src="/artemis-logo.png" alt="Artemis" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-gray-400 max-w-sm mb-8 leading-relaxed text-sm">
               A modern platform to discover, book, and experience movies in one place.

@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="glass px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between rounded-full">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer group">
-          <img src="/artemis-logo.png" alt="Artemis" className="h-14 w-auto object-contain" />
+          <img src="/artemis-logo.png" alt="Artemis" className="h-10 w-auto object-contain" />
         </div>
 
         {/* Center Links */}
