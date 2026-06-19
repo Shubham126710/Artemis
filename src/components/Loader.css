@@ -26,16 +26,16 @@
 
 @keyframes eclipse-mask {
   0% {
-    -webkit-mask-position: -250px -345px;
-    mask-position: -250px -345px;
+    -webkit-mask-position: -230px -345px;
+    mask-position: -230px -345px;
   }
   50% {
-    -webkit-mask-position: -410px -345px;
-    mask-position: -410px -345px;
+    -webkit-mask-position: -350px -345px;
+    mask-position: -350px -345px;
   }
   100% {
-    -webkit-mask-position: -570px -345px;
-    mask-position: -570px -345px;
+    -webkit-mask-position: -470px -345px;
+    mask-position: -470px -345px;
   }
 }
 
