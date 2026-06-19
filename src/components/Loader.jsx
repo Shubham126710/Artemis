@@ -67,14 +67,10 @@ const Loader = ({ setLoading }) => {
       <div className="vignette"></div>
 
       <div className="relative flex flex-col items-center justify-center z-10 gap-12">
-        <div className="square-loader">
-          <div className="loader-square"></div>
-          <div className="loader-square"></div>
-          <div className="loader-square"></div>
-          <div className="loader-square"></div>
-          <div className="loader-square"></div>
-          <div className="loader-square"></div>
-          <div className="loader-square"></div>
+        <div className="moon-loader-wrapper">
+          <div className="moon-loader">
+            <div className="moon-shadow"></div>
+          </div>
         </div>
         
         {/* Subtle Loading Text and Random Quote */}
