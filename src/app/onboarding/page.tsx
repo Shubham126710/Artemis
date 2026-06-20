@@ -40,6 +40,9 @@ export default function OnboardingPage() {
 
   const proceedToStep2 = async () => {
     setIsFetchingRecommendations(true);
+    // Save genres immediately so they aren't lost if the user bails out of swiping
+    localStorage.setItem('silverSeat_genres', JSON.stringify(selectedGenres));
+    
     try {
       const res = await fetch(`/api/movies/onboarding?genres=${encodeURIComponent(selectedGenres.join(","))}`);
       const data = await res.json();

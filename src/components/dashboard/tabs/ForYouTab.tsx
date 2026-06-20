@@ -48,7 +48,9 @@ export default function ForYouTab({ movies, onBookMovie, setActiveTab }: ForYouT
       const movieData = movie as any;
       const movieTags = movieData.genres ? movieData.genres.map((g: any) => g.name) : (movie.tags || []);
       const matchCount = movieTags.filter((g: string) => savedGenres.includes(g)).length;
-      return { ...movie, matchScore: matchCount };
+      const unionSize = new Set([...savedGenres, ...movieTags]).size;
+      const percentage = unionSize > 0 ? Math.round((matchCount / unionSize) * 100) : 0;
+      return { ...movie, matchScore: percentage };
     })
     .filter(m => m.matchScore > 0)
     .sort((a, b) => b.matchScore - a.matchScore)
@@ -61,7 +63,9 @@ export default function ForYouTab({ movies, onBookMovie, setActiveTab }: ForYouT
       .map(movie => {
         const movieTags = movie.tags || [];
         const matchCount = movieTags.filter((g: string) => savedGenres.includes(g)).length;
-        return { ...movie, matchScore: matchCount };
+        const unionSize = new Set([...savedGenres, ...movieTags]).size;
+        const percentage = unionSize > 0 ? Math.round((matchCount / unionSize) * 100) : 0;
+        return { ...movie, matchScore: percentage };
       })
       .filter(m => m.matchScore > 0)
       .sort((a, b) => b.matchScore - a.matchScore)
@@ -112,7 +116,7 @@ export default function ForYouTab({ movies, onBookMovie, setActiveTab }: ForYouT
                 {/* Badges */}
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   <span className="px-3 py-1 bg-gradient-to-r from-pink-600 to-purple-600 text-xs font-bold rounded-full text-white shadow-lg shadow-pink-500/30">
-                    {Math.round((movie.matchScore / savedGenres.length) * 100)}% MATCH
+                    {movie.matchScore}% MATCH
                   </span>
                 </div>
               </div>
